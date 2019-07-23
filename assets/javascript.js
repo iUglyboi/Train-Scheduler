@@ -43,7 +43,7 @@
             var key = childSnapshot.key;
         
 
-    var firstTrainTime = moment(time, "hh:mm").subtract(1, "years");
+    var firstTrainTime = moment(time, "hh:mm").subtract(1, "minutes");
     console.log(firstTrainTime);
 
    
