@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     var firebaseConfig = {
         apiKey: "AIzaSyAS28IfDs_q9QD7T4GHBbTRc06CgMwhleQ",
         authDomain: "train-schedule-7c823.firebaseapp.com",
@@ -29,7 +30,53 @@ $(document).ready(function() {
             frequency: frequency
         });
     });
+});
 
     dataRef.ref().on("child_added", function(childSnapshot) {
         console.log(childSnapshot.val());
+    
+        var name = childSnapshot.val().name;
+        var destination = childSnapshot.val().destination;
+        var frequency = childSnapshot.val().frequency;
+        var time = childSnapshot.val().time;
+        var key = childSnapshot.key;
         
+
+        var firstTrainTime = moment(time, "hh:mm").subtract(1, "minutes");
+        console.log(firstTrainTime);
+
+   
+
+    var currentTime = moment();
+        console.log("Current Time: " + moment(currentTime).format("hh:mm"));
+
+
+        $("#timeCurrently").html("Current Time: " + moment(currentTime).format("hh:mm"));
+
+
+        var timeDiff = moment().diff(moment(firstTrainTime), "minutes");
+        console.log("Difference In Time: " + timeDiff);
+
+
+        var remainingTime = timeDiff % frequency;
+        console.log(remainingTime);
+
+
+        var minNextTrain = frequency - timeRemainder;
+        console.log("Minutes Till Train: " + minNextTrain);
+
+
+        var addNextTrain = moment().add(minNextTrain, "minutes");
+        var nextTrainArr = moment(addNextTrain).format("hh:mm");
+        console.log("Arrival Time: " + nextTrainArr);
+
+        $("#newTrains").append(
+            "<tr><td>" + name + "</td>" +
+            "<td>" + destination + "</td>" +
+            "<td>" + frequency + "</td>" +
+            "<td>" + minNextTrain + "</td>" +
+            "<td>" + nextTrainArr + "</td>"
+        );
+
+ });
+    
