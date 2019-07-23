@@ -1,5 +1,27 @@
+body{
+    background-color: black;
+}
+
 #jumbotron{
     background-image: url('./picture/train.jpeg');
   
 
+}
+
+#newTrains{
+    background-color: black;
+    color: red;
+
+}
+#name{
+    color: red;
+}
+#destination{
+    color: red;
+}
+#firstTrain{
+    color:red
+}
+#frequency{
+    color: red;
 }

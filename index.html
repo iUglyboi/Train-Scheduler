@@ -20,11 +20,11 @@
 		<!-- current trains -->
 		<div class="panel panel-primary">
  			<div class="panel-heading">
-   				<h3 class="panel-title" style="text-align: center"><strong>Current Train Schedule</strong></h3>
+   				<h3 class="panel-title" style="text-align: center; color: white" ><strong>Current Train Schedule</strong></h3>
   			</div>
   
   			<div class="panel-body">
-				<table class="table" id="trains">
+				<table class="table" id="trains" style="color: white">
 					<thead>
 						<th>Train Name</th>
 						<th>Destination</th>
@@ -40,34 +40,34 @@
 		
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title"><strong>Add Train</strong></h3>
+				<h3 class="panel-title" style="color: white"><strong>Add Train</strong></h3>
 			</div>
 		
 			<div class="panel-body">		
 				<form>
 					
 					<div class="form-group">
-						<label for="">Train Name</label>
+                        <label for="" style="color: white">Train Name</label>
 						<input type="text" class="form-control" id="name">
 					</div>
 
-					
-						<label for="">Destination</label>
-						<input type="text" class="form-control" id="destination">
+					<div class="form-group">
+					<label for="" style="color: white">Destination</label>
+					<input type="text" class="form-control" id="destination">
 					</div>
 
 					<div class="form-group">
-						<label for="">First Train Time (HH:mm - military time)</label>
+						<label for="" style="color: white">First Train Time (HH:mm - military time)</label>
 						<input type="text" class="form-control" id="firstTrain">
 					</div>
 
 					<div class="form-group">
-						<label for="">Frequency (min)</label>
+						<label for="" style="color: white">Frequency (min)</label>
 						<input type="text" class="form-control" id="frequency">
 					</div>
 					
 					<!-- submit button -->
-					<button type="submit" class="btn btn-primary" id="trainAdd">Submit</button>
+					<button type="submit" class="btn btn-primary" style="background-color: red" id="trainAdd">Submit</button>
 				</form>
 			</div>
 		</div>
